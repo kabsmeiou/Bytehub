@@ -69,3 +69,7 @@ def signin(request):
 
 def post(request):
     return render(request, 'post.html')
+
+
+def profile(request):
+    return render(request, 'profile.html')
