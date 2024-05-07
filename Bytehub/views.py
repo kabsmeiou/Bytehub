@@ -4,6 +4,7 @@ from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from .models import Profile
 
+
 # Create your views here.
 def index(request):
     return render(request, 'index.html')
@@ -11,10 +12,15 @@ def index(request):
 
 def signup(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        email = request.POST['email']
-        password = request.POST['password']
-        password_confirmation = request.POST['password2']
+        username = request.POST.get('username', '')
+        email = request.POST.get('email', '')
+        password = request.POST.get('password', '')
+        password_confirmation = request.POST.get('password2', '')
+
+        # check if a data field is empty
+        if username == '' or email == '' or password == '' or password_confirmation == '':
+            messages.info(request, 'All fields must have an input.')
+            return redirect('signup')
 
         if password == password_confirmation:
             if User.objects.filter(email=email).exists():
@@ -42,8 +48,12 @@ def signup(request):
 
 def signin(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
+        username = request.POST.get('username', '')
+        password = request.POST.get('password', '')
+
+        if username == '' or password == '':
+            messages.info(request, 'All fields must have an input.')
+            return redirect('signin')
 
         user = auth.authenticate(username=username, password=password)
 
