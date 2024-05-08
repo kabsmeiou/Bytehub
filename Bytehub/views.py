@@ -40,7 +40,7 @@ def signup(request):
                 new_profile.save()
                 return redirect('signin')
         else:
-            messages.info(request, 'Passwords do not match.')
+            messages.info(request, 'Passwords do not match!')
             return redirect('signup')
     else:
         return render(request, 'signup.html')
