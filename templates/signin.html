@@ -25,9 +25,11 @@
 <body class="bg-gray-100">
     <form action="" method="POST">
         {% csrf_token %}
-        <input type="text" placeholder="Email or Username" />
-        <input type="password" placeholder="Password" required />
-        <button type="submit">Login</button>
+      <input type="text" placeholder="Email or Username" required />
+      <input type="password" placeholder="Password" required />
+      <button onclick="forgotPassword()">Forgot Password?</button>
+      <button type="submit">Sign In</button>
+      <p>New here? <a href="#" onclick="showSignUp()">Create an Account</a></p>
         <div>
             <p>Not registered yet? <a href="{% url 'signup' %}">Signup</a></p>
         </div>
