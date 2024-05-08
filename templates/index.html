@@ -10,14 +10,11 @@
     <title>Home - Bytehub</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{% static 'assets/css/icons.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/uikit.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/tailwind.css' %}">
 </head>
 
 <body>
-
+    <button class="create-post-button"><a href="{% url 'post' %}">Create Post</a></button>
+    <button class="user-profile"><a href="{% url 'profile' %}">User Profile</a></button>
     <h1>THIS IS THE HOME PAGE</h1>
 
  <!-- Scripts
