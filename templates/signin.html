@@ -10,23 +10,27 @@
     <title>Login - Bytehub</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" href="{% static 'assets/css/signin.css' %}">
 </head>
+
+<body class="bg-gray-100">
+    <img src="{% static 'assets/images/ByteHubLogo.png' %}">
+    <h4></h4>
     <div>
         <style>
             h5 {
                 color: red;
+                text-align: center;
             }
         </style>
         {% for message in messages %}
-        <h5> {{message}} </h5>
+        <h5> {{ message }} </h5>
         {% endfor %}
     </div>
-<body class="bg-gray-100">
-    <form action="" method="POST">
+    <form id="loginForm" action="" method="POST">
         {% csrf_token %}
-        <input type="text" name="username" placeholder="Username">
-        <input type="password" name="password" placeholder="Password">
+        <input type="text" name="username" placeholder="Username" required/>
+        <input type="password" name="password" placeholder="Password" required/>
         <button type="submit">Login</button>
         <div>
             <p>Not registered yet? <a href="{% url 'signup' %}">Signup</a></p>

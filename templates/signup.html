@@ -11,27 +11,31 @@
     <title>Register - Bytehub</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'assets/css/signup.css' %}">
 
 </head>
 
 <body class="bg-gray-100">
+    <img src="{% static 'assets/images/ByteHubLogo.png' %}">
+    <h4></h4>
     <div>
         <style>
             h5 {
                 color: red;
+                text-align: center;
             }
         </style>
         {% for message in messages %}
-        <h5> {{message}} </h5>
+        <h5> {{ message }} </h5>
         {% endfor %}
     </div>
     <form id="signUpForm" action="" method="POST">
         {% csrf_token %}
-      <input type="email" placeholder="Enter Email" required />
-      <input type="text" placeholder="Enter Username" required />
-      <input type="password" placeholder="Enter Password" required />
-      <input type="password" placeholder="Confirm Password" required />
-      <button type="submit">Register</button>
+        <input type="text" name="username"  placeholder="Enter Username" required/>
+        <input type="email" name="email" placeholder="Enter Email" required/>
+        <input type="password" name="password" placeholder="Enter Password" required/>
+        <input type="password" name="password2" placeholder="Confirm Password" required/>
+        <button type="submit">Register</button>
         <div>
             <p>Do you have an account? <a href="{% url 'signin' %}">Login</a></p>
         </div>

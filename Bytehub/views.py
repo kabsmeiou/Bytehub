@@ -17,11 +17,6 @@ def signup(request):
         password = request.POST.get('password', '')
         password_confirmation = request.POST.get('password2', '')
 
-        # check if a data field is empty
-        if username == '' or email == '' or password == '' or password_confirmation == '':
-            messages.info(request, 'All fields must have an input.')
-            return redirect('signup')
-
         if password == password_confirmation:
             if User.objects.filter(email=email).exists():
                 messages.info(request, 'The email you want to use is already associated with an account.')
@@ -50,10 +45,6 @@ def signin(request):
     if request.method == 'POST':
         username = request.POST.get('username', '')
         password = request.POST.get('password', '')
-
-        if username == '' or password == '':
-            messages.info(request, 'All fields must have an input.')
-            return redirect('signin')
 
         user = auth.authenticate(username=username, password=password)
 
