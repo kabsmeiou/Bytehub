@@ -25,13 +25,13 @@
         <h5> {{message}} </h5>
         {% endfor %}
     </div>
-    <form action="" method="POST">
+    <form id="signUpForm" action="" method="POST">
         {% csrf_token %}
-        <input type="text" name="username" placeholder="Username">
-        <input type="email" name="email" placeholder="Gbox Account">
-        <input type="password" name="password" placeholder="Password">
-        <input type="password" name="password2" placeholder="Confirm Password">
-        <button type="submit">Register</button>
+      <input type="email" placeholder="Enter Email" required />
+      <input type="text" placeholder="Enter Username" required />
+      <input type="password" placeholder="Enter Password" required />
+      <input type="password" placeholder="Confirm Password" required />
+      <button type="submit">Register</button>
         <div>
             <p>Do you have an account? <a href="{% url 'signin' %}">Login</a></p>
         </div>
