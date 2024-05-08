@@ -6,7 +6,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{% static 'assets/images/favicon.png' %}" rel="icon" type="image/png">
     <title>Login - Bytehub</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,10 +22,12 @@
         {% endfor %}
     </div>
 <body class="bg-gray-100">
-    <form action="" method="POST">
+    <img src="{% static 'assets/images/ByteHubLogo.png' %}">
+    <h4></h4>
+    <form id="loginForm" action="" method="POST">
         {% csrf_token %}
-        <input type="text" placeholder="Email or Username" />
-        <input type="password" placeholder="Password" required />
+        <input type="text" name="username" placeholder="Username"/>
+        <input type="password" name="password" placeholder="Password"/>
         <button type="submit">Login</button>
         <div>
             <p>Not registered yet? <a href="{% url 'signup' %}">Signup</a></p>
@@ -72,11 +73,6 @@
     <!-- Scripts
     ================================================== -->
     <script src="{% static 'assets/js/tippy.all.min.js' %}"></script>
-    <script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
-    <script src="{% static 'assets/js/uikit.js' %}"></script>
-    <script src="{% static 'assets/js/simplebar.js' %}"></script>
-    <script src="{% static 'assets/js/custom.js' %}"></script>
-
 
 </body>
 
