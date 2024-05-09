@@ -62,5 +62,6 @@ def post(request):
     return render(request, 'post.html')
 
 
-def profile(request):
-    return render(request, 'profile.html')
+def profile(request, username):
+    user = User.objects.get(username=username)
+    return render(request, 'profile.html', {'username' : username})

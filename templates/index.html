@@ -14,7 +14,7 @@
 
 <body>
     <button class="create-post-button"><a href="{% url 'post' %}">Create Post</a></button>
-    <button class="user-profile"><a href="{% url 'profile' %}">User Profile</a></button>
+    <button class="user-profile"><a href="{% url 'profile' request.user.username %}">User Profile</a></button>
     <h1>THIS IS THE HOME PAGE</h1>
 
  <!-- Scripts
