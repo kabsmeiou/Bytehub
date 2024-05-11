@@ -10,8 +10,6 @@ function openPopup() {
             popupContent.innerHTML = html;
             popupContainer.style.display = 'block'; // display the popup
             dimmerOverlay.style.display = 'block';
-            ClassicEditor
-                .create(document.querySelector('#popup-content #post-editor'))
         });
 }
 
