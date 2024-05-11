@@ -8,8 +8,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - Bytehub</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'assets/css/signup.css' %}">
 
 </head>
@@ -31,6 +29,12 @@
         {% csrf_token %}
         <input type="text" name="username"  placeholder="Enter Username" required/>
         <input type="email" name="email" placeholder="Enter Email" required/>
+        <select name="course" required>
+            <option value="">Select Course</option>
+            {% for course in courses %}
+                <option value="{{ course.id }}">{{ course.course_name }}</option>
+            {% endfor %}
+        </select>
         <input type="password" name="password" placeholder="Enter Password" required/>
         <input type="password" name="password2" placeholder="Confirm Password" required/>
         <button type="submit">Register</button>

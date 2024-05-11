@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
-from .models import Profile
+from .models import Profile, Post, Course
 
 
 # Create your views here.
@@ -11,9 +11,11 @@ def index(request):
 
 
 def signup(request):
+    courses = Course.objects.all()
     if request.method == 'POST':
         username = request.POST.get('username', '')
         email = request.POST.get('email', '')
+        course_id = request.POST.get('course', '')
         password = request.POST.get('password', '')
         password_confirmation = request.POST.get('password2', '')
 
@@ -31,14 +33,15 @@ def signup(request):
 
                 # create the profile of the user after authentication
                 user_model = User.objects.get(username=username)
-                new_profile = Profile.objects.create(user=user_model, id_user=user_model.id)
+                course = Course.objects.get(id=course_id)
+                new_profile = Profile.objects.create(user=user_model, id_user=user_model.id, user_course=course)
                 new_profile.save()
                 return redirect('signin')
         else:
             messages.info(request, 'Passwords do not match!')
             return redirect('signup')
     else:
-        return render(request, 'signup.html')
+        return render(request, 'signup.html', {"courses": courses})
 
 
 def signin(request):
@@ -59,7 +62,13 @@ def signin(request):
 
 
 def post(request):
-    return render(request, 'post.html')
+    if request.method == 'POST':
+        title = request.POST.get('title', '')
+        content = request.POST.get('content', '')
+
+        new_post = Post.objects.create()
+    else:
+        return render(request, 'post.html')
 
 
 def profile(request, username):
