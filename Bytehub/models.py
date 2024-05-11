@@ -22,7 +22,7 @@ class Profile(models.Model):
     user_image = models.ImageField(upload_to='profile_images', default='lebron.jpg')
     user_course = models.ForeignKey(Course, on_delete=models.CASCADE, null=False, default=1)
     user_bio = models.TextField(blank=True)
-
+    
     def __str__(self):
         return self.user.username
 
