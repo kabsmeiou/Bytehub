@@ -33,7 +33,7 @@
     max-height: 230px;
 }
 
-/*
+/*added home page styling, care to change */
 * {
   margin: 0;
   padding: 0;
@@ -215,22 +215,6 @@ h1 {
   margin-bottom: 10px;
 }
 
-.postimages {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 10px;
-  align-items: center;
-  justify-content: center;
-}
-
-.postimage {
-  width: 100%;
-  max-width: 180px;
-  height: auto;
-  object-fit: contain;
-}
-
 .reactions {
   margin-top: 10px;
   display: flex;
@@ -271,5 +255,3 @@ h1 {
   font-size: 14px;
   color: #fff;
 }
-
-*/

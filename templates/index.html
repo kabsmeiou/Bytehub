@@ -11,7 +11,21 @@
 </head>
 
 <body>
-    <!-----  
+  <!-- added header -->
+  <header>
+    <img src="sample images/ByteHubLogo.png" alt="Website Logo" class="logo" />
+    <img src="sample images/ByteHub.png" alt="Website Title" class="title" />
+  </header>  
+
+    <div id="post-popup-page">
+        <div id="popup-content"></div>
+
+    </div>
+    <div id="bg-dim"></div>
+    <button class="create-post-button" onclick="openPopup()">Create Post</button>
+    <button class="user-profile"><a href="{% url 'profile' request.user.username %}">User Profile</a></button>
+
+    <!--added home page body-->
     <div id="container">
       <div id="left">
         <div class="post">
@@ -24,26 +38,16 @@
         <div class="postfeed">
           <div class="profile">
             <div class="profilepic">
-              <img src="images/hesus.jpg" alt="Profile Picture" />
+              <img src="sample images/hesus.jpg" alt="Profile Picture" />
             </div>
             <div class="profilename"><h4>John Michael Coronel</h4></div>
           </div>
           <div class="postcontent">
             <div class="posttitle">
-              <h5>Random Bullshit</h5>
+              <h5>Random Hackathon</h5>
             </div>
             <div class="posttext">
               <p>Just random bullshit</p>
-            </div>
-            <div class="postimages">
-              <img class="postimage" src="images/dingdong.jpg" alt="PostImage"/>
-              <img class="postimage" src="images/sample.jpeg" alt="PostImage"/>
-              <img class="postimage" src="images/rrr.jpg" alt="PostImage"/>
-              <img class="postimage" src="images/tocino.jpg" alt="PostImage"/>
-              <img class="postimage" src="images/tree.png" alt="PostImage"/>
-              <img class="postimage" src="images/tns.jpg" alt="PostImage"/>
-              <img class="postimage" src="images/erap.jpg" alt="PostImage"/>
-              <img class="postimage" src="images/image1.png" alt="PostImage"/>
             </div>
           </div>
           <div class="reactions">
@@ -78,14 +82,6 @@
                 for internet humor, solidifying his status as not just a basketball legend, but also a meme sensation.
               </p>
             </div>
-            <div class="postimages">
-              <img class="postimage" src="lebron/lebron1.jpeg" alt="PostImage"/>
-              <img class="postimage" src="lebron/lebron3.jpeg" alt="PostImage"/>
-              <img class="postimage" src="lebron/lebron4.jpg" alt="PostImage"/>
-              <img class="postimage" src="lebron/lebron6.jpeg" alt="PostImage"/>
-              <img class="postimage" src="lebron/lebron7.png" alt="PostImage"/>
-              <img class="postimage" src="lebron/lebron8.jpg" alt="PostImage"/>
-            </div>
           </div>
           <div class="reactions">
             <div class="reaction">
@@ -105,14 +101,9 @@
       <div id="right">
         <div class="section" id="forums"><h4>Forums</h4></div>
         <div class="section" id="online-users"><h4>Online</h4></div>
-    -->
-    <div id="post-popup-page">
-        <div id="popup-content"></div>
-
+      </div>
     </div>
-    <div id="bg-dim"></div>
-    <button class="create-post-button" onclick="openPopup()">Create Post</button>
-    <button class="user-profile"><a href="{% url 'profile' request.user.username %}">User Profile</a></button>
+
 </body>
 <script src="{% static 'assets/js/home.js' %}"></script>
 </html>
