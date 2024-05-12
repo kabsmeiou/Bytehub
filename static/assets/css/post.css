@@ -1,0 +1,67 @@
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#popup-content {
+    background-color: #282C34;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    max-height: calc(100% - 40px);
+    overflow-y: auto;
+}
+
+.ck-editor__editable {
+    min-height: 230px;
+    max-height: 230px;
+}
+
+h2 {
+    color: #fff;
+    margin-bottom: 10px; /* Increase space below heading */
+}
+
+#post-button {
+    margin-top: 10px;
+    float: right;
+    background-color: #27B1B6;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#post-button:hover, #close-button:hover {
+    background-color: #1C7E87;
+}
+
+#close-button {
+    float: right;
+    background-color: #FF0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+input[type=text] {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: calc(100% - 22px);
+}
+
+
+input[type=text]:focus {
+    outline: none;
+    border-color: #27B1B6;
+    box-shadow: 0 0 0 3px rgba(39, 177, 182, 0.1);
+}
