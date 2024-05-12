@@ -1,14 +1,20 @@
 {% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'assets/css/post.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
 <body>
-    <button onclick="closePopup()">x</button>
-
+    <button id="close-button" onclick="closePopup()">
+        Close
+    </button>
     <form action="" method="POST">
         {% csrf_token %}
         <h2 class="page-text">Title</h2>
         <input type="text" name="title" required/>
         <h2 class="page-text">Content</h2>
         <textarea id="post-editor" name="content"></textarea>
-        <button type="submit">Post</button>
+        <button id="post-button" type="submit">Post</button>
     </form>
-
 </body>
