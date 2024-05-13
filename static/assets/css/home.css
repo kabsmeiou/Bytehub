@@ -5,7 +5,14 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 9999; /* Ensure it's above other content */
-    border-radius: 10px;
+}
+
+#popup-content {
+    background-color: #282C34;
+    padding: 5px;
+    border-radius: 5px;
+    max-height: calc(100% - 40px);
+    overflow-y: auto;
 }
 
 /* Styles for the dimmer overlay */

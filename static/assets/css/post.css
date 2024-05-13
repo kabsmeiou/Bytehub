@@ -4,16 +4,6 @@ body {
     font-style: normal;
 }
 
-#popup-content {
-    background-color: #282C34;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    max-height: calc(100% - 40px);
-    overflow-y: auto;
-}
-
 .ck-editor__editable {
     min-height: 230px;
     max-height: 230px;
