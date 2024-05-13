@@ -4,12 +4,8 @@
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50vw;
-    height: 60vh;
-    background-color: white; /* Background color of the popup */
     z-index: 9999; /* Ensure it's above other content */
     border-radius: 10px;
-    background-color: #282C34;
 }
 
 /* Styles for the dimmer overlay */
@@ -24,16 +20,6 @@
     z-index: 9998; /* Ensure it's below the popup */
 }
 
-#popup-content {
-    margin: 2rem;
-}
-
-.ck-editor__editable {
-    min-height: 230px;
-    max-height: 230px;
-}
-
-/*added home page styling, care to change */
 * {
   margin: 0;
   padding: 0;
