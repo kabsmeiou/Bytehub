@@ -15,7 +15,8 @@ class Course(models.Model):
 
 
 class Profile(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    # one to one relationship so the user can access profile attributes as well
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     id_user = models.IntegerField()
     # the user needs to have chosen their course before being able to sign up.
     # this is for verification purposes
