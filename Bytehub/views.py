@@ -7,7 +7,9 @@ from .models import Profile, Post, Course
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    user_posts = Post.objects.all().order_by('-publication_date')
+    post_vote_count = {posts.id: posts.post_upvotes - posts.post_downvotes for posts in user_posts}
+    return render(request, 'index.html', {"user_posts": user_posts, "post_vote_count": post_vote_count})
 
 
 def signup(request):
@@ -65,7 +67,6 @@ def post(request):
     if request.method == 'POST':
         title = request.POST.get('title', '')
         content = request.POST.get('content', '')
-
         new_post = Post.objects.create()
     else:
         return render(request, 'post.html')
@@ -73,4 +74,4 @@ def post(request):
 
 def profile(request, username):
     user = User.objects.get(username=username)
-    return render(request, 'profile.html', {'username' : username})
+    return render(request, 'profile.html', {'user': user})

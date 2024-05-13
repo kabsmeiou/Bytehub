@@ -19,85 +19,55 @@
 
     <div id="post-popup-page">
         <div id="popup-content"></div>
-
     </div>
+
     <div id="bg-dim"></div>
-    <button class="create-post-button" onclick="openPopup()">Create Post</button>
     <button class="user-profile"><a href="{% url 'profile' request.user.username %}">User Profile</a></button>
 
     <!--added home page body-->
     <div id="container">
       <div id="left">
         <div class="post">
-          <button class="button" onclick="createPost()">Create Post</button>
+          <button class="button" onclick="openPopup()">Create Post</button>
         </div>
         <div class="section" id="announcements"><h4>Announcements</h4></div>
       </div>
 
       <div id="middle">
-        <div class="postfeed">
-          <div class="profile">
-            <div class="profilepic">
-              <img src="sample images/hesus.jpg" alt="Profile Picture" />
+        {% if user_posts %}
+          {% for post in user_posts %}
+          <div class="postfeed">
+            <div class="profile">
+              <div class="profilepic">
+                <img src="{{ post.author.user_image.url }}" alt="Profile Picture" />
+              </div>
+              <div class="profilename"><h4>{{ post.author.user.username }}</h4></div>
             </div>
-            <div class="profilename"><h4>John Michael Coronel</h4></div>
-          </div>
-          <div class="postcontent">
-            <div class="posttitle">
-              <h5>Random Hackathon</h5>
+            <div class="postcontent">
+              <div class="posttitle">
+                <h5>{{ post.post_title }}</h5>
+              </div>
+              <div class="posttext">
+                <p>{{ post.post_text }}</p>
+              </div>
             </div>
-            <div class="posttext">
-              <p>Just random bullshit</p>
-            </div>
-          </div>
-          <div class="reactions">
-            <div class="reaction">
-              <button class="upvote"><img src="reactions/upvote.png" alt="upvote" /></button>
-              <p class="votecount">1M</p>
-            </div>
-            <div class="reaction">
-              <button class="downvote"><img src="reactions/downvote.png" alt="downvote" /></button>
-              <p class="votecount">50</p>
-            </div>
-            <button class="commentbutton"><img src="reactions/comment.png" alt="comment" /></button>
-            <button class="sharebutton"><img src="reactions/share.png" alt="share" /></button>
-          </div>
-        </div>
-
-        <div class="postfeed">
-          <div class="profile">
-            <div class="profilepic">
-              <img src="lebron/lebron.jpg" alt="Profile Picture" />
-            </div>
-            <div class="profilename"><h4>Lebron James</h4></div>
-          </div>
-          <div class="postcontent">
-            <div class="posttitle"><h5>Lebron Goat Memes</h5></div>
-            <div class="posttext">
-              <p>LeBron James memes have become a cultural phenomenon, capturing the essence 
-                of his iconic moments on and off the basketball court. From his intense game faces 
-                to his infamous "LeBron James crying" image, these memes 
-                have brought humor and entertainment to fans worldwide. Whether celebrating his triumphs or 
-                poking fun at his occasional mishaps, LeBron's larger-than-life persona has provided endless fodder 
-                for internet humor, solidifying his status as not just a basketball legend, but also a meme sensation.
-              </p>
+            <div class="reactions">
+              <div class="reaction">
+                <button class="upvote"><img src="reactions/upvote.png" alt="upvote" /></button>
+                <p class="votecount"> {{post.post_upvotes}} </p>
+              </div>
+              <div class="reaction">
+                <button class="downvote"><img src="reactions/downvote.png" alt="downvote" /></button>
+              </div>
+              <button class="commentbutton"><img src="reactions/comment.png" alt="comment" /></button>
+              <button class="sharebutton"><img src="reactions/share.png" alt="share" /></button>
             </div>
           </div>
-          <div class="reactions">
-            <div class="reaction">
-              <button class="upvote"><img src="reactions/upvote.png" alt="upvote" /></button>
-              <p class="votecount">1k</p>
-            </div>
-            <div class="reaction">
-              <button class="downvote"><img src="reactions/downvote.png" alt="downvote" /></button>
-              <p class="votecount">50k</p>
-            </div>
-            <button class="commentbutton"><img src="reactions/comment.png" alt="comment" /></button>
-            <button class="sharebutton"><img src="reactions/share.png" alt="share" /></button>
-          </div>
-        </div>
+        {% endfor %}
+        {% else %}
+          <h4 style="text-align: center; transform: translateY(500%);">No posts available.</h4>
+        {% endif %}
       </div>
-
       <div id="right">
         <div class="section" id="forums"><h4>Forums</h4></div>
         <div class="section" id="online-users"><h4>Online</h4></div>
