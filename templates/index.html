@@ -1,7 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,14 +12,14 @@
 <body>
   <!-- added header -->
   <header>
-    <img src="sample images/ByteHubLogo.png" alt="Website Logo" class="logo" />
+    <img src="{% static 'assets/images/ByteHubLogo.png' %}" alt="Website Logo" class="logo" />
     <img src="sample images/ByteHub.png" alt="Website Title" class="title" />
   </header>  
-
+    <!-- this is for when the user clicks the create post button -->
     <div id="post-popup-page">
         <div id="popup-content"></div>
     </div>
-
+    <!-- bg dim for the homepage when the pop up page for posting is on the screen -->
     <div id="bg-dim"></div>
     <button class="user-profile"><a href="{% url 'profile' request.user.username %}">User Profile</a></button>
 
@@ -30,7 +29,9 @@
         <div class="post">
           <button class="button" onclick="openPopup()">Create Post</button>
         </div>
-        <div class="section" id="announcements"><h4>Announcements</h4></div>
+        <div class="section" id="announcements">
+          <h4>Announcements</h4>
+        </div>
       </div>
 
       <div id="middle">
@@ -69,8 +70,12 @@
         {% endif %}
       </div>
       <div id="right">
-        <div class="section" id="forums"><h4>Forums</h4></div>
-        <div class="section" id="online-users"><h4>Online</h4></div>
+        <div class="section" id="forums">
+          <h4>Forums</h4>
+        </div>
+        <div class="section" id="online-users">
+          <h4>Online</h4>
+        </div>
       </div>
     </div>
 

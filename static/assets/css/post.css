@@ -19,11 +19,6 @@ body {
     max-height: 230px;
 }
 
-h2 {
-    color: #fff;
-    margin-bottom: 10px; /* Increase space below heading */
-}
-
 #post-button {
     margin-top: 10px;
     float: right;
@@ -52,8 +47,7 @@ h2 {
 
 
 input[type=text] {
-    margin: 10px 0;
-    padding: 10px;
+    margin-top: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
     width: calc(100% - 22px);
