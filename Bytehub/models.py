@@ -30,7 +30,7 @@ class Profile(models.Model):
 class Post(models.Model):
     # on_delete models.Cascade makes sure that if the author is deleted,
     # all the posts by that user is also removed
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(Profile, on_delete=models.CASCADE)
     post_title = models.CharField(max_length=150)
     post_text = models.TextField(max_length=800)
     publication_date = models.DateTimeField("date published")

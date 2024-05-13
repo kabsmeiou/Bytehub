@@ -91,7 +91,7 @@ h1 {
 .button:after {
   content: "";
   position: absolute;
-  left: 55%;
+  left: 50%;
   transform: translateX(-50%) scaleY(1) scaleX(1.45);
   top: 180%;
   width: 160%;
