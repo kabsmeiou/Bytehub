@@ -241,3 +241,148 @@ h1 {
   font-size: 14px;
   color: #fff;
 }
+
+/*navigation bar*/
+/*
+.navigationbar {
+  display: flex;
+  background-color: #d9d9d9;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  gap: 12 px;
+  margin-bottom: 20px;
+}
+
+.navigationbar .profile-button img {
+  display: flex;
+  height: 50px;
+  width: auto;
+}
+
+.navigationbar .profile-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding-right: 50px;
+  width: 25%;
+  height: 100%;
+}
+
+.navicons {
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  gap: 15px;
+}
+
+.navicons img {
+  height: 30px;
+  width: 30px;
+}
+
+.navicons button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  height: 100%;
+}
+
+.plusButton {
+  --plus_sideLength: 2.3rem;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgb(0, 0, 0);
+  width: var(--plus_sideLength);
+  height: var(--plus_sideLength);
+  background-color: #34697F;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.plusButton::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-width: 0 var(--plus_topRightTriangleSideLength) var(--plus_topRightTriangleSideLength) 0;
+  border-style: solid;
+  border-color: transparent white transparent transparent;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+.plusButton:hover {
+  cursor: pointer;
+}
+
+.plusButton:hover::before {
+  --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+  border-color: transparent #74FAC8 transparent transparent; 
+}
+
+.plusButton:focus-visible::before {
+  --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+  border-color: transparent black transparent transparent; 
+}
+
+.plusButton>.plusIcon {
+  fill: white;
+  width: calc(var(--plus_sideLength) * 0.7);
+  height: calc(var(--plus_sideLength) * 0.7);
+  z-index: 1;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+.plusButton:hover>.plusIcon {
+  fill: black;
+  transform: rotate(180deg);
+}
+
+.plusButton:focus-visible>.plusIcon {
+  fill: black;
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  z-index: 1;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #d9d9d9;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #8f8f8f;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+*/
