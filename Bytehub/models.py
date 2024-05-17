@@ -22,7 +22,8 @@ class Profile(models.Model):
     # this is for verification purposes
     user_image = models.ImageField(upload_to='profile_images', default='lebron.jpg')
     user_course = models.ForeignKey(Course, on_delete=models.CASCADE, null=False, default=1)
-    user_bio = models.TextField(blank=True)
+    user_bio = models.TextField(default="This is the my bio.")
+    display_name = models.TextField(default="Anonymous User")
 
     def __str__(self):
         return self.user.username

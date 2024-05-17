@@ -15,6 +15,27 @@
     overflow-y: auto;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+p {
+    font-size: 15px;
+    margin: 0;
+    color: #d9d9d9;
+}
+
+
+body {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    background-color: #282c34;
+}
 /* Styles for the dimmer overlay */
 #bg-dim {
     display: none;
@@ -27,15 +48,10 @@
     z-index: 9998; /* Ensure it's below the popup */
 }
 
-body {
-  font-family: sans-serif;
-  background-color: #282c34;
-}
-
 header {
   background-color: #d9d9d9;
   color: #000000;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   align-items: center;
   width: 100%;
@@ -51,6 +67,76 @@ header {
   width: 200px;
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.containersearch {
+    width: 65%;
+}
+
+.search-container {
+    position: relative;
+    float: right;
+}
+
+.search-icon {
+    position: absolute;
+    width: 12px;
+    top: 4.8px;
+    right: 10px;
+}
+
+.search-bar {
+    outline: none;
+    padding-right: 30px;
+    padding-left: 10px;
+    width: 300px;
+    height: 20px;
+    border: 5px;
+    border-radius: 5px;
+}
+
+.search-bar:hover {
+    box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+    border-color: rgba(223,225,229,0);
+}
+
+.icons {
+    padding-left: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.icons img {
+    width: 22px;
+    height: 22px;
+}
+
+.icons button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding-left: 2px;
+    padding: 2px;
+}
+
+.icons button:hover {
+    background-color: #27b1b6;
+    cursor: pointer;
+    box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+}
+
+.profile-button {
+    display: flex;
+    align-items: center;
+}
+
+.profile-button img {
+    margin-right: 10px;
+}
+
+.profile-button div {
+    text-align: left;
 }
 
 .col {
@@ -73,10 +159,135 @@ header {
   height: 60px;
 }
 
-.fw-bolder {
+a, .fw-bolder {
     color: #fff;
+    text-decoration: none;
 }
 
+a:hover, .fw-bolder:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.reacts {
+    margin-top: 10px;
+    display: flex;
+}
+
+.reacts {
+    margin-top: 10px;
+    display: flex;
+}
+
+.vote-buttons {
+    border-radius: 50px;
+    background-color: #494f5c;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin-left: 10px;
+}
+
+.vote-buttons p {
+    display: flex;
+    margin: auto;
+    margin-left: 2px;
+}
+
+.up-button, .down-button {
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    background-color: #494f5c;
+    margin: auto;
+    padding: 4px 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.down-button {
+    margin-left: 10px;
+}
+
+.comment {
+    border-radius: 50px;
+    background-color: #494f5c;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    padding: 5px 10px ;
+    margin-left: 15px;
+}
+
+.comment p {
+    display: flex;
+    margin: auto;
+    margin-left: 5px;
+}
+
+.share {
+    border-radius: 50px;
+    background-color: #494f5c;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    padding: 5px 10px ;
+    margin-left: 15px;
+}
+
+.share p {
+    display: flex;
+    margin: auto;
+    margin-left: 5px;
+}
+
+.reacts button{
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.reacts img {
+    width: 100%;
+    height: 100%;
+}
+
+.up-button img {
+    margin-top: -12px;
+    margin-left: -18px;
+    position: center;
+}
+
+.down-button img {
+    margin-top: -12px;
+    margin-left: -18px;
+    position: center;
+}
+
+.posts div:not(.post-profile, .post-profile-name, .reacts, .vote-buttons, .comment, .share, .up-button, .down-button){
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-lg:hover {
+    background-color: #2d313a;
+}
+
+.vote-buttons:hover {
+    background-color: #616877;
+}
+
+.comment:hover, .share:hover, .up-button:hover, .down-button:hover {
+    background-color: #27b1b6;
+    cursor: pointer;
+}
 
 .votecount {
   position: absolute;
