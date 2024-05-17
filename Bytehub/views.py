@@ -9,12 +9,13 @@ from .models import Profile, Post, Course
 def index(request):
     user_posts = Post.objects.all().order_by('-publication_date')
     post_vote_count = {posts.id: posts.post_upvotes - posts.post_downvotes for posts in user_posts}
-    return render(request, 'index.html', {"user_posts": user_posts, "post_vote_count": post_vote_count})
+    return render(request, 'index.html', {"user_posts": user_posts, "post_vote_count": post_vote_count, "user": request.user})
 
 
 def signup(request):
     courses = Course.objects.all()
     if request.method == 'POST':
+        display_name = request.POST.get('display_name', '')
         username = request.POST.get('username', '')
         email = request.POST.get('email', '')
         course_id = request.POST.get('course', '')
@@ -36,7 +37,7 @@ def signup(request):
                 # create the profile of the user after authentication
                 user_model = User.objects.get(username=username)
                 course = Course.objects.get(id=course_id)
-                new_profile = Profile.objects.create(user=user_model, id_user=user_model.id, user_course=course)
+                new_profile = Profile.objects.create(display_name=display_name, user=user_model, id_user=user_model.id, user_course=course)
                 new_profile.save()
                 return redirect('signin')
         else:
@@ -74,4 +75,5 @@ def post(request):
 
 def profile(request, username):
     user = User.objects.get(username=username)
-    return render(request, 'profile.html', {'user': user})
+    user_posts = Post.objects.all().filter(author=user.profile)
+    return render(request, 'profile.html', {'user': user, 'user_posts': user_posts})

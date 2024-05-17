@@ -27,6 +27,7 @@
     </div>
     <form id="signUpForm" action="" method="POST">
         {% csrf_token %}
+        <input type="text" name="display_name"  placeholder="Enter your display name" required/>
         <input type="text" name="username"  placeholder="Enter Username" required/>
         <input type="email" name="email" placeholder="Enter Email" required/>
         <select name="course" required>
