@@ -103,8 +103,9 @@ header {
 }
 
 .profile-button img {
-    margin-right: 10px;
     border-radius: 50%;
+    width: 40px;
+    height: 40px;
 }
 
 .profile-button div {
