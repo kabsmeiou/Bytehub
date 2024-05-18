@@ -15,13 +15,15 @@ class Course(models.Model):
 
 
 class Profile(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    # one to one relationship so the user can access profile attributes as well
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     id_user = models.IntegerField()
     # the user needs to have chosen their course before being able to sign up.
     # this is for verification purposes
     user_image = models.ImageField(upload_to='profile_images', default='lebron.jpg')
     user_course = models.ForeignKey(Course, on_delete=models.CASCADE, null=False, default=1)
-    user_bio = models.TextField(blank=True)
+    user_bio = models.TextField(default="This is the my bio.")
+    display_name = models.TextField(default="Anonymous User")
 
     def __str__(self):
         return self.user.username
@@ -30,7 +32,7 @@ class Profile(models.Model):
 class Post(models.Model):
     # on_delete models.Cascade makes sure that if the author is deleted,
     # all the posts by that user is also removed
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(Profile, on_delete=models.CASCADE)
     post_title = models.CharField(max_length=150)
     post_text = models.TextField(max_length=800)
     publication_date = models.DateTimeField("date published")

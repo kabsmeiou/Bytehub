@@ -1,0 +1,473 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    background-color: #282c34;
+}
+
+p {
+    font-size: 15px;
+    margin: 0;
+    color: #d9d9d9;
+}
+
+header {
+  background-color: #d9d9d9;
+  color: #000000;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  width: 60px;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+.title {
+  width: 200px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.containersearch {
+    width: 65%;
+}
+
+.search-container {
+    position: relative;
+    float: right;
+}
+
+.search-icon {
+    position: absolute;
+    width: 12px;
+    top: 4.8px;
+    right: 10px;
+}
+
+.search-bar {
+    outline: none;
+    padding-right: 30px;
+    padding-left: 10px;
+    width: 300px;
+    height: 20px;
+    border: 5px;
+    border-radius: 5px;
+}
+
+.search-bar:hover {
+    box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+    border-color: rgba(223,225,229,0);
+}
+
+.icons {
+    padding-left: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.icons img {
+    width: 22px;
+    height: 22px;
+}
+
+.icons button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding-left: 2px;
+    padding: 2px;
+}
+
+.icons button:hover {
+    background-color: #27b1b6;
+    cursor: pointer;
+    box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+}
+
+.profile-button {
+    display: flex;
+    align-items: center;
+}
+
+.profile-button img {
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.profile-button div {
+    text-align: left;
+}
+
+.main {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    flex-direction: row;
+    display: flex;
+    gap: 20px;
+}
+
+.container {
+    background-color: none;
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+    height: max-content;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+.container-lg {
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+
+.rounded-circle {
+  width: 60px;
+  height: 60px;
+}
+
+.fw-bolder {
+    color: #fff;
+}
+
+.fw-bolder:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.container h1, h4 {
+    color: #ffffff;
+}
+
+.container p {
+    color: #c2c2c2;
+    position: fixed;
+}
+
+.user_image {
+    margin: auto;
+}
+
+.user_image img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 1.5rem;
+}
+
+.profile-info {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.profile-buttons button{
+    margin-bottom: 10px;
+    padding: 7px 30px;
+    border: 1px solid #27b1b6;
+    border-radius: 5px;
+    transition: all 0.2s ease-in;
+    position: relative;
+    font-size: 17px;
+    cursor: pointer;
+    color: white;
+    background-color: #27b1b6;
+    height: fit-content;
+    font-weight: bold;
+    display: flex;
+    gap: 15px;
+}
+
+.profile-details {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.profile-buttons button:hover{
+    background-color: #34697F;
+    border-color: #34697F;
+}
+
+.profile-buttons {
+    display: flex;
+}
+
+.profile-connect {
+    margin-left: 1vw;
+}
+
+.container2 {
+    margin: auto;
+    background-color:#282c34;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 100vh;
+}
+
+.user-posts{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+
+.filter {
+    float: right;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+.filter img {
+    width: 22px;
+    height: 22px;
+    float: right;
+    margin-top: -1vh;
+}
+
+.filter:hover{
+    background-color: #27b1b6;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.post-profile {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+}
+
+.post-profile img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.post-profile-name {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-name {
+    font-size:medium;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.post-username {
+    font-size: small;
+}
+
+.posts h3, a{
+    color:#ffffff;
+    text-decoration: none;
+    text-align: left;
+    line-height: 2;
+}
+
+.posts a:hover{
+    color:#ffffff;
+    text-decoration: underline;
+}
+
+.posts p:not(.post-name) {
+    color: #c2c2c2;
+}
+
+.reacts {
+    margin-top: 10px;
+    display: flex;
+}
+
+.vote-buttons {
+    border-radius: 50px;
+    background-color: #494f5c;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin-left: 10px;
+}
+
+.vote-buttons p {
+    display: flex;
+    margin: auto;
+    margin-left: 2px;
+}
+
+.up-button, .down-button {
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    background-color: #494f5c;
+    margin: auto;
+    padding: 4px;
+}
+
+.up, .down {
+    margin: auto;
+}
+
+.up-button img {
+    margin-top: -12px;
+    margin-left: -5px;
+    position: center;
+}
+
+.down-button img {
+    margin-top: -12px;
+    margin-left: -5px;
+    position: center;
+}
+
+.down-button {
+    margin-left: 10px;
+}
+
+.comment {
+    border-radius: 50px;
+    background-color: #494f5c;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    padding: 5px 10px ;
+    margin-left: 15px;
+}
+
+.comment p {
+    display: flex;
+    margin: auto;
+    margin-left: 5px;
+}
+
+.share {
+    border-radius: 50px;
+    background-color: #494f5c;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    padding: 5px 10px ;
+    margin-left: 15px;
+}
+
+.share p {
+    display: flex;
+    margin: auto;
+    margin-left: 5px;
+}
+
+.reacts button{
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.reacts img {
+    width: 100%;
+    height: 100%;
+}
+
+.posts div:not(.post-profile, .post-profile-name, .reacts, .vote-buttons, .comment, .share, .up-button, .down-button){
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.posts div:hover:not(.vote-buttons, .reacts, .vote-buttons, .comment, .share, .up-button, .down-button){
+    background-color: #2d313a;
+}
+
+.vote-buttons:hover {
+    background-color: #616877;
+}
+
+.comment:hover, .share:hover, .up-button:hover, .down-button:hover {
+    background-color: #27b1b6;
+    cursor: pointer;
+}
+
+
+
+/*FRIEND LIST*/
+
+.container3 {
+    padding: 20px;
+    background-color:#282c34;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    border-color: #555b68;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+.container3 p, h3 {
+    color: #ffffff;
+}
+
+.container3 button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 5px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.people button:hover{
+    background-color: #34697F;
+    border-color: #34697F;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.people button{
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.people img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.people p {
+    text-align: left;
+}
+
+footer {
+    height: 100px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
