@@ -32,9 +32,9 @@
       <button><img src="{% static 'assets/images/icon_bookmark.png' %}" alt="Bookmark Icon"></button>
       <button><img src="{% static 'assets/images/icon_bell.png' %}" alt="Notification Icon"></button>
       <button class="profile-button" onclick="window.location.href='{% url 'profile' user.username %}'">
-        <img src="{{ user.profile.user_image.url }}" class="rounded-circle" alt="Profile Icon" style="width: 30px; height: 30px;">
+        <img src="{{ user.profile.user_image.url }}" class="rounded-circle me-2" alt="Profile Icon">
         <div>
-          Last Name <br>
+          <b>Last Name</b>  <br>
           First Name M.I.
         </div>
       </button>
