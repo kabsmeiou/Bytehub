@@ -132,9 +132,7 @@ header {
 }
 
 .profile-button img {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    margin-right: 10px;
 }
 
 .profile-button div {
@@ -171,9 +169,152 @@ a:hover, .fw-bolder:hover {
     cursor: pointer;
 }
 
-.reacts {
-    margin-top: 10px;
+.navigationbar {
     display: flex;
+    background-color: #d9d9d9;
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    margin-left: 30px;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.50);
+    margin-bottom: 10px;
+}
+  
+.navigationbar .profile-button img {
+    display: flex;
+    height: 50px;
+    width: auto;
+}
+  
+.navigationbar .profile-button {
+    border: none; 
+    background: none;
+    cursor: pointer;
+    padding-right: 50px;
+    width: 25%;
+    height: 100%;
+}
+  
+.navicons {
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    gap: 15px;
+}
+  
+.navicons img{
+    height: 30px;
+    width: 30px;
+}
+  
+.navicons button{
+    border: none; 
+    background: none;
+    cursor: pointer;
+    height: 100%;
+}
+
+.plusButton {
+    /* Config start */
+    --plus_sideLength: 1.80rem;
+    /* Config end */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    width: var(--plus_sideLength);
+    height: var(--plus_sideLength);
+    background-color: #34697F;
+    overflow: hidden;
+    border-radius: 50%;
+}
+  
+.plusButton::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-width: 0 var(--plus_topRightTriangleSideLength) var(--plus_topRightTriangleSideLength) 0;
+    border-style: solid;
+    border-color: transparent white transparent transparent;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.2s;
+}
+  
+.plusButton:hover {
+    cursor: pointer;
+}
+  
+.plusButton:hover::before {
+    --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+    border-color: transparent #74FAC8 transparent transparent; /* Change border color here */
+}
+  
+.plusButton:focus-visible::before {
+    --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+    border-color: transparent black transparent transparent; /* Change border color here */
+}
+  
+.plusButton>.plusIcon {
+    fill: white;
+    width: calc(var(--plus_sideLength) * 0.7);
+    height: calc(var(--plus_sideLength) * 0.7);
+    z-index: 1;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.2s;
+}
+  
+.plusButton:hover>.plusIcon {
+    fill: black; /* Change fill color here */
+    transform: rotate(180deg);
+}
+  
+.plusButton:focus-visible>.plusIcon {
+    fill: black; /* Change fill color here */
+    transform: rotate(180deg);
+}
+
+.btn {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    padding: 0 0;
+    min-width: 120px;
+    border-radius: 5px;
+    background-color: #2d313a; 
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); 
+    z-index: 1;
+    overflow: hidden;
+}
+
+.dropdown-menu a {
+    color: black;
+    font-size: 14px;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    min-width: 100px
+}
+
+.dropdown-menu a:hover {
+    background-color: #8f8f8f; 
+    color: black; 
 }
 
 .reacts {
