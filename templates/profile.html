@@ -70,7 +70,7 @@
         <div class="col-6 mt-3" style="margin: 5rem; height: 100%;">
             <div class="container2">
                 <div class="user-posts">
-                    <h2 style="color: #fff">{{user.profile.display_name}}'s Posts</h2>
+                    <h3 style="color: #fff">{{user.profile.display_name}}'s Posts</h3>
                     <button class="filter"><img src="{% static 'assets/images/icon_filter.png' %}"></button>
                 </div>
                 {% if user_posts %}
@@ -111,13 +111,15 @@
                   </div>
                 {% endfor %}
             {% else %}
-              <h4 style="text-align: center; transform: translateY(500%);">No posts available.</h4>
+              <h5 style="text-align: center; transform: translateY(500%); color: #fff;">
+                  No posts available.
+              </h5>
             {% endif %}
             </div>
         </div>
         <div class="col mt-3 ms-0">
             <div class="container3">
-                <h3>Connected With</h3>
+                <h4>Connected With</h4>
                 <br>
                 <div class="people">
                   <!--This segment below is a list of people the user is connected with.
