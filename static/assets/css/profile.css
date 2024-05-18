@@ -163,6 +163,7 @@ header {
 
 .user_image {
     margin: auto;
+
 }
 
 .user_image img {
@@ -170,7 +171,10 @@ header {
     height: 250px;
     border-radius: 50%;
     object-fit: cover;
-    margin-left: 1.5rem;
+    border: 5px solid transparent;
+    background-image: linear-gradient(white, white), linear-gradient(to right, #34697F, #74FAC8);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
 }
 
 .profile-info {
@@ -220,12 +224,14 @@ header {
     flex-direction: column;
     width: 90%;
     height: 100vh;
+    padding: 3rem;
 }
 
 .user-posts{
     display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
+    border-bottom: solid #74FAC8;
 }
 
 
