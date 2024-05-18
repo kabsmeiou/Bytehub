@@ -34,7 +34,7 @@
       <button class="profile-button" onclick="window.location.href='{% url 'profile' request.user.username %}'">
         <img src="{{ request.user.profile.user_image.url }}" class="rounded-circle me-2" alt="Profile Icon" style="width: 30px; height: 30px;">
         <div>
-          Last Name <br>
+            <b>Last Name</b> <br>
           First Name M.I.
         </div>
       </button>
@@ -42,29 +42,31 @@
   </header>
   <div class="container-fluid mt-3">
       <div class="row">
-        <div class="col mt-3" style="margin-left: 5rem">
-            <div class="user_image">
-                <img src="{{ user.profile.user_image.url }}" alt="Profile Picture">
-            </div>
-            <div class="profile-info mt-2">
-                <div class="profile-name">
-                    <h1 style="margin-bottom: 0; color: #fff"> {{user.profile.display_name}} </h1>
-                    <p> @{{user.username}} </p>
+        <div class="col mt-3" style="margin-left: 5rem; ">
+            <div class="container-md text-center">
+                <div class="user_image mt-2">
+                    <img src="{{ user.profile.user_image.url }}" alt="Profile Picture" style="margin-bottom: 1rem;">
                 </div>
-                <div class="profile-details">
-                    <p>Student</p>
-                    <p>ID: 202200069</p>
-                    <p>Email: {{request.user.email}}</p>
-                    <p>{{user.profile.user_course}}</p>
+                <div class="profile-info mt-2">
+                    <div class="profile-name">
+                        <h1 style="margin-bottom: 0; color: #fff"> {{user.profile.display_name}} </h1>
+                        <p> @{{user.username}} </p>
+                    </div>
+                    <div class="profile-details">
+                        <p>Student</p>
+                        <p>ID: 202200069</p>
+                        <p>Email: {{request.user.email}}</p>
+                        <p>{{user.profile.user_course}}</p>
+                    </div>
+                    <div class="profile-bio">
+                        <h4>Bio</h4>
+                        <p>{{user.profile.user_bio}}</p>
+                    </div>
                 </div>
-                <div class="profile-bio">
-                    <h4>Bio</h4>
-                    <p>{{user.profile.user_bio}}</p>
+                <div class="profile-buttons">
+                  <button class="profile-message">Message</button>
+                  <button class="profile-connect">Connect</button>
                 </div>
-            </div>
-            <div class="profile-buttons">
-              <button class="profile-message">Message</button>
-              <button class="profile-connect">Connect</button>
             </div>
         </div>
         <div class="col-6 mt-3" style="margin: 5rem; height: 100%;">
@@ -111,14 +113,16 @@
                   </div>
                 {% endfor %}
             {% else %}
-              <h5 style="text-align: center; transform: translateY(500%); color: #fff;">
-                  No posts available.
-              </h5>
+                <div class="container2" style="max-height: 30%; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin: 2.5rem;">
+                  <h5 style="text-align: center; transform: translateY(250%); color: #fff;">
+                      No posts available.
+                  </h5>
+                </div>
             {% endif %}
             </div>
         </div>
         <div class="col mt-3 ms-0">
-            <div class="container3">
+            <div class="container3 mt-2">
                 <h4>Connected With</h4>
                 <br>
                 <div class="people">
@@ -151,6 +155,4 @@
       <p>&copy; 2024 Cabral, Capricho, Dreu, Labrador</p>
   </footer>
 </body>
-
-
 </html>
