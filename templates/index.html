@@ -52,6 +52,38 @@
           Column
         </div>
         <div class="col-5 mt-3">
+          <div class="navigationbar">
+            <button class="profile-button">
+              <a href="#"><img src="icon_profile.png" alt="Profile Icon"></a>
+            </button>
+            <div class="navicons">
+              <button class="dropdown">
+                <img src="icon_bookmark.png" alt="Bookmark Icon">
+              </button>
+              <button class="message">
+                <img src="icon_message.png" alt="Message Icon"></a>
+              </button>
+              <div tabindex="0" class="plusButton">
+                <svg class="plusIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                  <g mask="url(#mask0_21_345)">
+                    <path d="M13.75 23.75V16.25H6.25V13.75H13.75V6.25H16.25V13.75H23.75V16.25H16.25V23.75H13.75Z"></path>
+                  </g>
+                </svg>
+              </div>
+            </div>
+        </div>
+        <div class="dropdown">
+          <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <svg color="white" width="15" height="15" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+              <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+              </svg>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="#">Edit</a></li>
+              <li><a class="dropdown-item text-warning" href="#">Report</a></li>
+              <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+          </ul>
+        </div>
           {% if user_posts %}
           {% for post in user_posts %}
           <div class="container-lg mb-2 mt-2">
