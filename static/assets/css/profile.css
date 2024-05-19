@@ -178,6 +178,12 @@ header {
     background-clip: content-box, border-box;
 }
 
+.col-6 p, ol, li {
+    font-size: 15px;
+    margin: 0;
+    color: #d9d9d9;
+}
+
 .profile-info {
     text-align: left;
     margin-bottom: 30px;
