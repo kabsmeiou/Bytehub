@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -76,11 +75,11 @@ WSGI_APPLICATION = 'CSDC105.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'bytehubdb',
-        'USER': 'postgres',
-        'PASSWORD': 'thegreat23',
-        'HOST': 'localhost',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'bytehub_db',
+        'USER': 'bytehub',
+        'PASSWORD': '_baconboi123',
+        'HOST': 'postgresql-bytehub.alwaysdata.net',
         'PORT': '5432',
     }
 }
