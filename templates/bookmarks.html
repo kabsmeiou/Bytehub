@@ -83,6 +83,7 @@
                 </div>
             </div>
         </div>
+        {%if bookmarks%}
         {%for post in bookmarks%}
         <div class="container-lg mb-2 mt-2">
           <div class="container-sm" style="display: flex">
@@ -137,6 +138,9 @@
                 </div>
               </div>
             {%endfor%}
+            {%else%}
+            <h4 style="text-align: center; transform: translateY(500%); color: #fff">You have not bookmarked any posts.</h4>
+            {%endif%}
         </div>
       </div>
   </div>
