@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.utils import timezone
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from .models import Profile, Post, Course
@@ -9,7 +10,14 @@ from .models import Profile, Post, Course
 def index(request):
     user_posts = Post.objects.all().order_by('-publication_date')
     post_vote_count = {posts.id: posts.post_upvotes - posts.post_downvotes for posts in user_posts}
-    return render(request, 'index.html', {"user_posts": user_posts, "post_vote_count": post_vote_count, "user": request.user})
+    if request.method == 'POST':
+        title = request.POST.get('title', '')
+        content = request.POST.get('content', '')
+        new_post = Post.objects.create(post_title=title, post_text=content, author=request.user.profile)
+        Post.save(new_post)
+        return redirect('index')
+    else:
+        return render(request, 'index.html', {"user_posts": user_posts, "post_vote_count": post_vote_count, "user": request.user})
 
 
 def signup(request):
@@ -65,12 +73,7 @@ def signin(request):
 
 
 def post(request):
-    if request.method == 'POST':
-        title = request.POST.get('title', '')
-        content = request.POST.get('content', '')
-        new_post = Post.objects.create()
-    else:
-        return render(request, 'post.html')
+    return render(request, 'post.html')
 
 
 def profile(request, username):
