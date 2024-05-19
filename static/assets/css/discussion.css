@@ -1,0 +1,115 @@
+.ck-editor__editable {
+    min-height: 150px;
+    max-height: 150px;
+}
+
+.ck.ck-editor {
+    max-width: 97%;
+    margin-left: 0.5rem;
+}
+
+h3, h4 {
+   margin-top: 1.5rem;
+   margin-left: 0.5rem;
+   color: white;
+}
+
+.col-5 {
+    margin: auto;
+}
+
+#post-button {
+    margin-top: -0.2rem;
+    margin-right: 1rem;
+    float: right;
+    background-color: #27B1B6;
+    color: #fff;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+
+#post-button:hover {
+    background-color: #1C7E87;
+}
+
+.dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    padding: 0 0;
+    min-width: 120px;
+    border-radius: 5px;
+    background-color: #2d313a;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    overflow: hidden;
+}
+
+.dropdown-menu a {
+    color: black;
+    font-size: 14px;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    min-width: 100px
+}
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        min-width: 120px;
+        border-radius: 5px;
+        background-color: #2d313a;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        overflow: hidden;
+    }
+
+    .dropdown-menu button {
+        color: black;
+        font-size: 14px;
+        padding: 8px 16px;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .dropdown-menu button:hover {
+        background-color: #8f8f8f;
+    }
+a, .fw-bolder {
+    color: #fff;
+    text-decoration: none;
+}
+
+.mini-screen {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 2px;
+}
+
+.notification-item {
+    padding: 0;
+    border-bottom: 1px solid #ccc;
+    color: #333;
+}
+
+.notification-item:last-child {
+    border-bottom: none; /* Remove border-bottom for last item */
+}

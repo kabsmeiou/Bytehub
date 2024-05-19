@@ -23,13 +23,15 @@
     font-family: "Roboto", sans-serif;
 }
 
-.container-fluid p, ol, li {
+.container-fluid p, .container-fluid ol, .container-fluid li {
     font-size: 15px;
     margin: 0;
     color: #d9d9d9;
 }
 
-.post-popup-page .popup-content p {
+.post-popup-page .popup-content p, .forum p,
+.post-popup-page .popup-content ol,
+.post-popup-page .popup-content li {
     color: black;
 }
 
@@ -144,10 +146,6 @@ header {
 
 .profile-button div {
     text-align: left;
-}
-
-.col {
-    border: 1px solid #ddd;
 }
 
 .navigationbar {
@@ -269,34 +267,60 @@ header {
     border: none;
 }
 
-.dropdown-menu {
-    display: block;
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        min-width: 120px;
+        border-radius: 5px;
+        background-color: #2d313a;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        overflow: hidden;
+    }
+
+    .dropdown-menu button {
+        color: black;
+        font-size: 14px;
+        padding: 8px 16px;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .dropdown-menu button:hover {
+        background-color: #8f8f8f;
+    }
+
+span {
+    margin-top: 0;
+    font-size: 9px;
 }
 
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    padding: 0 0;
-    min-width: 120px;
+.mini-screen {
+    background-color: #fff;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #2d313a; 
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); 
-    z-index: 1;
-    overflow: hidden;
+    padding: 10px 2px;
 }
 
-.dropdown-menu a {
-    color: black;
-    font-size: 14px;
-    padding: 8px 16px;
-    text-decoration: none;
-    display: block;
-    min-width: 100px
+.notification-item {
+    padding: 0;
+    border-bottom: 1px solid #ccc;
+    color: #333;
 }
 
-.dropdown-menu a:hover {
-    background-color: #8f8f8f;
-    color: black;
+.notification-item:last-child {
+    border-bottom: none; /* Remove border-bottom for last item */
 }
 
 #username {
@@ -454,4 +478,129 @@ a:hover, .fw-bolder:hover {
   color: #fff;
 }
 
+/*announcement design*/
+:root {
+    --announcement-header-bg-color: #555B68;
+    --announcement-header-text-color: white;
+    --announcement-header-padding: 10px;
+    --announcement-item-border-color: #ccc;
+    --announcement-item-padding: 10px;
+    --announcement-date-margin-top: 1px;
+    --announcement-container-bg-color: #D9D9D9;
+    --announcement-border-radius: 7px;
+    --announcement-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  /* Announcement Container */
+  .announcement {
+    width: auto;
+    background-color: var(--announcement-container-bg-color);
+    border-radius: var(--announcement-border-radius);
+    box-shadow: var(--announcement-box-shadow);
+  }
 
+  /* Announcement Header */
+  .announcement h2 {
+    background-color: var(--announcement-header-bg-color);
+    color: var(--announcement-header-text-color);
+    padding: var(--announcement-header-padding);
+    border-top-left-radius: var(--announcement-border-radius);
+    border-top-right-radius: var(--announcement-border-radius);
+  }
+
+  /* Announcement Items */
+  .announcement-item {
+    margin-top: 1px;
+    padding: var(--announcement-item-padding);
+    border-bottom: 1px solid var(--announcement-item-border-color);
+    color: black;
+    text-decoration: underline;
+  }
+
+  .announcement-item:last-child {
+    margin-top: 1px;
+    padding: var(--announcement-item-padding);
+    border-bottom: none;
+    color: black;
+    text-decoration: underline;
+  }
+  /* Announcement Date */
+  .announcement-date {
+    margin-top: var(--announcement-date-margin-top);
+    margin-left: 75%;
+    text-decoration: none;
+  }
+
+  .announcement {
+    width: auto;
+    background-color: var(--announcement-container-bg-color);
+    border-radius: var(--announcement-border-radius);
+    box-shadow: var(--announcement-box-shadow);
+  }
+
+  /* Announcement Header */
+  .announcement h2 {
+    background-color: var(--announcement-header-bg-color);
+    color: var(--announcement-header-text-color);
+    padding: var(--announcement-header-padding);
+    border-top-left-radius: var(--announcement-border-radius);
+    border-top-right-radius: var(--announcement-border-radius);
+  }
+
+  /* Announcement Items */
+  .announcement-item {
+    margin-top: 1px;
+    padding: var(--announcement-item-padding);
+    border-bottom: 1px solid var(--announcement-item-border-color);
+    color: black;
+    text-decoration: underline;
+  }
+
+  .announcement-item:last-child {
+    margin-top: 1px;
+    padding: var(--announcement-item-padding);
+    border-bottom: none;
+    color: black;
+    text-decoration: underline;
+  }
+  /* Announcement Date */
+  .announcement-date {
+    margin-top: var(--announcement-date-margin-top);
+    margin-left: 75%;
+    text-decoration: none;
+  }
+
+
+  /*Forum Design will base on announcement design*/
+  /* Forum Container */
+  .forum {
+    width: auto;
+    background-color: var(--announcement-container-bg-color);
+    border-radius: var(--announcement-border-radius);
+    box-shadow: var(--announcement-box-shadow);
+  }
+
+  /* forum Header */
+  .forum h2 {
+    background-color: var(--announcement-header-bg-color);
+    color: var(--announcement-header-text-color);
+    padding: var(--announcement-header-padding);
+    border-top-left-radius: var(--announcement-border-radius);
+    border-top-right-radius: var(--announcement-border-radius);
+  }
+
+  /* forum Items */
+  .forum-item {
+    margin-top: 1px;
+    padding: var(--announcement-item-padding);
+    border-bottom: 1px solid var(--announcement-item-border-color);
+    color: black;
+    text-decoration: underline;
+  }
+
+  .forum-item:last-child {
+    margin-top: 1px;
+    padding: var(--announcement-item-padding);
+    border-bottom: none;
+    color: black;
+    text-decoration: underline;
+  }

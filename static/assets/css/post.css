@@ -7,6 +7,7 @@ body {
 .ck-editor__editable {
     min-height: 230px;
     max-height: 230px;
+    max-width: 695px;
 }
 
 #post-button {

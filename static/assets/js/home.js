@@ -14,6 +14,7 @@ function openPopup() {
                 .create(document.querySelector('#popup-content #post-editor'))
         });
 }
+
 function closePopup() {
     var popupContainer = document.getElementById('post-popup-page');
     var dimmerOverlay = document.getElementById('bg-dim');
@@ -21,7 +22,35 @@ function closePopup() {
     dimmerOverlay.style.display = 'none';
 }
 
-function toggle() {
-  var elt = document.getElementById('dropmenu');
+function toggle(postid) {
+  var elt = document.getElementById('dropmenu-'+postid);
   elt.style.display = elt.style.display == 'block' ? 'none' : 'block';
+}
+
+function profile() {
+    var elt = document.getElementById('profile-dropdown');
+    elt.style.display = elt.style.display == 'block' ? 'none' : 'block';
+}
+
+function goBack() {
+    window.history.back();
+}
+
+function handleBookmark(event) {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+
+        fetch(event.target.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+
+        return false;
 }

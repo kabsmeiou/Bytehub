@@ -5,13 +5,6 @@ from django.conf import settings
 from django.db import migrations, models
 
 
-def create_initial_courses(apps, schema_editor):
-    course = apps.get_model('src', 'Course')
-    course.objects.create(course_name='BS Computer Science')
-    course.objects.create(course_name='BS Information Technology')
-    course.objects.create(course_name='BS Information Systems')
-
-
 class Migration(migrations.Migration):
 
     initial = True
@@ -51,5 +44,4 @@ class Migration(migrations.Migration):
                 ('user_course', models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to='Bytehub.course')),
             ],
         ),
-        migrations.RunPython(create_initial_courses),
     ]
