@@ -89,7 +89,7 @@
                     </div>
                     <div class="container-sm mt-1">
                       <p class="fw-semibold mb-0" style="font-size:22px; color: #fff;"><a href="discussion.html"> {{ post.post_title }} </a></p>
-                      <p class="fw-light mt-0" style="color: #c2c2c2"> {{ post.post_text }} </p>
+                      <p class="fw-light mt-0" style="color: #c2c2c2"> {{ post.post_text|safe }} </p>
                     </div>
                     <div class="reacts">
                         <div class="vote-buttons">

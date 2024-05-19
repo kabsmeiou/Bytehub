@@ -35,12 +35,16 @@ body {
     transition: background-color 0.3s ease;
 }
 
+.page-text {
+    margin-left: 0;
+    color:  #1C7E87;
+}
 
 input[type=text] {
-    margin-top: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    width: calc(100% - 22px);
+    width: 100%;
+    padding: 10px;
 }
 
 

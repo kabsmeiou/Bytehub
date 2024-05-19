@@ -1,7 +1,9 @@
 import datetime
+from datetime import datetime
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth import get_user_model
+from ckeditor.fields import RichTextField
 
 User = get_user_model()
 
@@ -34,8 +36,8 @@ class Post(models.Model):
     # all the posts by that user is also removed
     author = models.ForeignKey(Profile, on_delete=models.CASCADE)
     post_title = models.CharField(max_length=150)
-    post_text = models.TextField(max_length=800)
-    publication_date = models.DateTimeField("date published")
+    post_text = RichTextField()
+    publication_date = models.DateTimeField("date published", auto_now_add=True)
     post_upvotes = models.IntegerField(default=0)
     post_downvotes = models.IntegerField(default=0)
 

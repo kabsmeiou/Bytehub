@@ -1,18 +1,20 @@
 #post-popup-page {
     display: none;
     position: fixed;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 9999; /* Ensure it's above other content */
+    background-color: #282C34;
+    padding: 2rem;
+    border-radius: 5px;
 }
 
 #popup-content {
-    background-color: #282C34;
-    padding: 5px;
     border-radius: 5px;
     max-height: calc(100% - 40px);
     overflow-y: auto;
+    width: max-content;
 }
 
 * {
@@ -21,12 +23,15 @@
     font-family: "Roboto", sans-serif;
 }
 
-p {
+.container-fluid p, ol, li {
     font-size: 15px;
     margin: 0;
     color: #d9d9d9;
 }
 
+.post-popup-page .popup-content p {
+    color: black;
+}
 
 body {
     font-weight: 400;
@@ -148,10 +153,10 @@ header {
 .navigationbar {
     display: flex;
     background-color: #d9d9d9;
-    width: 200px;
-    height: 50px;
-    border-radius: 25px;
-    margin-left: 30px;
+    width: 120px;
+    height: 60px;
+    border-radius: 50px;
+    margin-left: 2.5rem;
     box-sizing: border-box;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.50);
     margin-bottom: 10px;
@@ -159,8 +164,11 @@ header {
   
 .navigationbar .profile-button img {
     display: flex;
-    height: 50px;
-    width: auto;
+    width: 58px; height: 58px;
+    border: 2px solid transparent;
+    background-image: linear-gradient(white, white), linear-gradient(to right, #34697F, #74FAC8);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
 }
   
 .navigationbar .profile-button {
@@ -175,16 +183,16 @@ header {
 .navicons {
     display: flex;
     align-items: center;
-    padding-left: 12px;
-    gap: 15px;
+    margin-left: 1rem;
+    gap: 1rem;
 }
   
-.navicons img{
-    height: 30px;
-    width: 30px;
+.navicons img {
+    height: 36px;
+    width: 36px;
 }
   
-.navicons button{
+.navicons button {
     border: none; 
     background: none;
     cursor: pointer;
@@ -193,7 +201,7 @@ header {
 
 .plusButton {
     /* Config start */
-    --plus_sideLength: 1.80rem;
+    --plus_sideLength: 2.5rem;
     /* Config end */
     position: relative;
     display: flex;
@@ -261,15 +269,13 @@ header {
     border: none;
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown-menu {
     display: block;
 }
 
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: 100%;
-    right: 0;
     padding: 0 0;
     min-width: 120px;
     border-radius: 5px;
@@ -289,8 +295,8 @@ header {
 }
 
 .dropdown-menu a:hover {
-    background-color: #8f8f8f; 
-    color: black; 
+    background-color: #8f8f8f;
+    color: black;
 }
 
 #username {
@@ -448,130 +454,4 @@ a:hover, .fw-bolder:hover {
   color: #fff;
 }
 
-/*announcement design*/
-:root {
-    --announcement-header-bg-color: #555B68;
-    --announcement-header-text-color: white;
-    --announcement-header-padding: 10px;
-    --announcement-item-border-color: #ccc;
-    --announcement-item-padding: 10px;
-    --announcement-date-margin-top: 1px;
-    --announcement-container-bg-color: #D9D9D9;
-    --announcement-border-radius: 7px;
-    --announcement-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
-  /* Announcement Container */
-  .announcement {
-    width: auto;
-    background-color: var(--announcement-container-bg-color);
-    border-radius: var(--announcement-border-radius);
-    box-shadow: var(--announcement-box-shadow);
-  }
-  
-  /* Announcement Header */
-  .announcement h2 {
-    background-color: var(--announcement-header-bg-color);
-    color: var(--announcement-header-text-color);
-    padding: var(--announcement-header-padding);
-    border-top-left-radius: var(--announcement-border-radius);
-    border-top-right-radius: var(--announcement-border-radius);
-  }
-  
-  /* Announcement Items */
-  .announcement-item {
-    margin-top: 1px;
-    padding: var(--announcement-item-padding);
-    border-bottom: 1px solid var(--announcement-item-border-color);
-    color: black;
-    text-decoration: underline;
-  }
-  
-  .announcement-item:last-child {
-    margin-top: 1px;
-    padding: var(--announcement-item-padding);
-    border-bottom: none;
-    color: black;
-    text-decoration: underline;
-  }
-  /* Announcement Date */
-  .announcement-date {
-    margin-top: var(--announcement-date-margin-top);
-    margin-left: 75%;
-    text-decoration: none;
-  }
-  
-  .announcement {
-    width: auto;
-    background-color: var(--announcement-container-bg-color);
-    border-radius: var(--announcement-border-radius);
-    box-shadow: var(--announcement-box-shadow);
-  }
-  
-  /* Announcement Header */
-  .announcement h2 {
-    background-color: var(--announcement-header-bg-color);
-    color: var(--announcement-header-text-color);
-    padding: var(--announcement-header-padding);
-    border-top-left-radius: var(--announcement-border-radius);
-    border-top-right-radius: var(--announcement-border-radius);
-  }
-  
-  /* Announcement Items */
-  .announcement-item {
-    margin-top: 1px;
-    padding: var(--announcement-item-padding);
-    border-bottom: 1px solid var(--announcement-item-border-color);
-    color: black;
-    text-decoration: underline;
-  }
-  
-  .announcement-item:last-child {
-    margin-top: 1px;
-    padding: var(--announcement-item-padding);
-    border-bottom: none;
-    color: black;
-    text-decoration: underline;
-  }
-  /* Announcement Date */
-  .announcement-date {
-    margin-top: var(--announcement-date-margin-top);
-    margin-left: 75%;
-    text-decoration: none;
-  }
-  
-  
-  /*Forum Design will base on announcement design*/
-  /* Forum Container */
-  .forum {
-    width: auto;
-    background-color: var(--announcement-container-bg-color);
-    border-radius: var(--announcement-border-radius);
-    box-shadow: var(--announcement-box-shadow);
-  }
-  
-  /* forum Header */
-  .forum h2 {
-    background-color: var(--announcement-header-bg-color);
-    color: var(--announcement-header-text-color);
-    padding: var(--announcement-header-padding);
-    border-top-left-radius: var(--announcement-border-radius);
-    border-top-right-radius: var(--announcement-border-radius);
-  }
-  
-  /* forum Items */
-  .forum-item {
-    margin-top: 1px;
-    padding: var(--announcement-item-padding);
-    border-bottom: 1px solid var(--announcement-item-border-color);
-    color: black;
-    text-decoration: underline;
-  }
-  
-  .forum-item:last-child {
-    margin-top: 1px;
-    padding: var(--announcement-item-padding);
-    border-bottom: none;
-    color: black;
-    text-decoration: underline;
-  }
-  
+

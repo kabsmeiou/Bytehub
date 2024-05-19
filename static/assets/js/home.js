@@ -14,10 +14,14 @@ function openPopup() {
                 .create(document.querySelector('#popup-content #post-editor'))
         });
 }
-
 function closePopup() {
     var popupContainer = document.getElementById('post-popup-page');
     var dimmerOverlay = document.getElementById('bg-dim');
     popupContainer.style.display = 'none';
     dimmerOverlay.style.display = 'none';
+}
+
+function toggle() {
+  var elt = document.getElementById('dropmenu');
+  elt.style.display = elt.style.display == 'block' ? 'none' : 'block';
 }
