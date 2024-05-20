@@ -181,7 +181,6 @@
                 <div class="people">
                   <!--This segment below is a list of people the user is connected with.
                   Disclaimer: "other-profile#" is just a placeholder.-->
-                    {%if request.user.profile == user.profile %}
                         {% if connected_users %}
                             {%for c_user in connected_users %}
                                 <button class="other-profile1">
@@ -198,7 +197,6 @@
                                   </p>
                                 </button>
                         {%endif%}
-                    {% endif %}
                 </div>
             </div>
         </div>

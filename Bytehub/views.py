@@ -139,7 +139,7 @@ def profile(request, username):
     user = User.objects.get(username=username)
     user_posts = Post.objects.all().filter(author=user.profile)
     profile = request.user.profile
-    connected_users = profile.connected_users.all()
+    connected_users = user.profile.connected_users.all()
     if request.method == 'POST':
         if 'bookmark' in request.POST:
             post_id = request.POST.get('post_id')
